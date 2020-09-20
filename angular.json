@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "budget-calculator"
+    }
+  },
+  "defaultProject": "budget-calculator",
+  "cli": {
+    "analytics": false
+  }
 }
