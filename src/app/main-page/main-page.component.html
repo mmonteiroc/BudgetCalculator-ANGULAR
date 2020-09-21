@@ -1,21 +1,21 @@
 <div class="top-bar">
-  <h1>My budget calculator</h1>
+  <h1 style="margin: 0">My budget calculator</h1>
 </div>
 
 <section class="total-budget-section">
-  <h2 class="green">
-    1500
+  <h2 [ngClass]="{'green': totalBudget>0, 'red': totalBudget<0}">
+    {{totalBudget}}
   </h2>
 </section>
 
 <section class="add-item-section">
   <div class="add-item-container">
-    <app-add-item-form style="padding: 20px"></app-add-item-form>
+    <app-add-item-form (formSubmit)="addItem($event)" style="padding: 20px"></app-add-item-form>
   </div>
 </section>
 
 <hr style="margin-top: 0">
 
-<app-budget-item-list>
+<app-budget-item-list [budgetItems]="budgetItems" (delete)="deleteItem($event)" (update)="updateItem($event)">
 
 </app-budget-item-list>
